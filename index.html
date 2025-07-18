@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MotionFlix | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --netflix-red: #e50914;
+      --dark-bg: #141414;
+      --light-text: #f5f5f1;
+      --muted-text: #999;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #000;
+      padding: 1rem 2rem;
+    }
+
+    .navbar-brand {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--netflix-red) !important;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .navbar a {
+      color: var(--light-text);
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('background6.jpg') no-repeat center center/cover;
+      height: 92vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 60px 30px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #141414 0%, transparent 60%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn-netflix {
+      background-color: var(--netflix-red);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 25px;
+      margin-right: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-netflix:hover {
+      background-color: #b00710;
+      transform: scale(1.05);
+    }
+
+    .btn-outline-light:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Section */
+    .section {
+      padding: 40px 30px;
+    }
+
+    .section h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    /* Slider */
+    .movie-slider-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .movie-slider {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 25s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .movie-card {
+      flex: 0 0 auto;
+      width: 260px;
+      height: 400px;
+      margin-right: 20px;
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.08);
+      z-index: 2;
+    }
+
+    .movie-card-title {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: var(--muted-text);
+      background-color: #000;
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content {
+        padding: 20px;
+      }
+
+      .navbar-brand {
+        font-size: 1.6rem;
+      }
+
+      .movie-card {
+        width: 180px;
+        height: 270px;
+      }
+
+      .movie-card-title {
+        font-size: 0.85rem;
+      }
+
+      .movie-slider {
+        animation-duration: 35s;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MotionFlix</a>
+    <div class="ms-auto">
+      <a href="login.php" class="btn btn-netflix">Login</a>
+      <a href="register.php" class="btn btn-outline-light">Register</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Discover Hidden Cinematic Gems</h1>
+    <p>Explore films that deserve more recognition. Join the underrated revolution on MotionFlix.</p>
+    <a href="login.php" class="btn btn-netflix">Get Started</a>
+    <a href="register.php" class="btn btn-outline-light">Join Now</a>
+  </div>
+</section>
+
+<!-- Movie Section -->
+<section class="section">
+  <h2>Popular Hidden Gems</h2>
+  <div class="movie-slider-wrapper">
+    <div class="movie-slider">
+      <!-- Repeated set of movie cards for seamless loop -->
+      <div class="movie-card"><img src="movie1.jpg" alt=""><div class="movie-card-title">Movie 1</div></div>
+      <div class="movie-card"><img src="movie2.jpg" alt=""><div class="movie-card-title">Movie 2</div></div>
+      <div class="movie-card"><img src="movie3.jpg" alt=""><div class="movie-card-title">Movie 3</div></div>
+      <div class="movie-card"><img src="movie4.jpg" alt=""><div class="movie-card-title">Movie 4</div></div>
+      <div class="movie-card"><img src="movie5.jpg" alt=""><div class="movie-card-title">Movie 5</div></div>
+      <div class="movie-card"><img src="movie6.jpg" alt=""><div class="movie-card-title">Movie 6</div></div>
+      <div class="movie-card"><img src="movie7.jpg" alt=""><div class="movie-card-title">Movie 7</div></div>
+
+      <!-- Clone for looping -->
+      <div class="movie-card"><img src="movie1.jpg" alt=""><div class="movie-card-title">Movie 1</div></div>
+      <div class="movie-card"><img src="movie2.jpg" alt=""><div class="movie-card-title">Movie 2</div></div>
+      <div class="movie-card"><img src="movie3.jpg" alt=""><div class="movie-card-title">Movie 3</div></div>
+      <div class="movie-card"><img src="movie4.jpg" alt=""><div class="movie-card-title">Movie 4</div></div>
+      <div class="movie-card"><img src="movie5.jpg" alt=""><div class="movie-card-title">Movie 5</div></div>
+      <div class="movie-card"><img src="movie6.jpg" alt=""><div class="movie-card-title">Movie 6</div></div>
+      <div class="movie-card"><img src="movie7.jpg" alt=""><div class="movie-card-title">Movie 7</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; <?php echo date("Y"); ?> MotionFlix. All rights reserved.
+</footer>
+
+</body>
+</html>
